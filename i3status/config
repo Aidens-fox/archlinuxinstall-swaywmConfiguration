@@ -1,0 +1,67 @@
+order += "wireless _first_"
+order += "battery all"
+order += "volume master"
+order += "disk /"
+order += "load"
+order += "cpu_temperature 0"
+order += "memory"
+order += "tztime local"
+
+general {
+        color_good = "#a6da95"
+        color_bad  = "#ed8796"
+
+       colors = true
+        interval = 1
+}
+
+wireless _first_ {
+        format_up = "網絡[%essid-%quality]%ip"
+        format_down = "網絡:無"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery all {
+       # format = "%status %percentage %remaining"
+	format = "電池%status %percentage"
+        format_down = "No battery"
+        last_full_capacity = true
+        integer_battery_capacity = true
+}
+
+
+disk "/" {
+        format = "磁盤%avail"
+}
+
+load {
+        format = "負荷%1min"
+}
+
+memory {
+        format = "內存%used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+tztime local {
+        format = "日期%Y-%m-%d時間%H:%M:%S"
+}
+
+volume master {
+	format = "聲音%volume"
+	format_muted = "安靜(%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
+cpu_temperature 0 {
+        format = "溫度%degrees°C"
+        max_threshold = 85
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
