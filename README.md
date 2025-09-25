@@ -1,0 +1,2 @@
+# archlinuxinstall-swaywmConfiguration
+archlinuxinstall+swaywmConfigurationa（arch安装文件+sway配置)
