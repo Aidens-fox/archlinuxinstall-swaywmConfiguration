@@ -1,18 +1,32 @@
 order += "wireless _first_"
 order += "battery all"
+order +=  "read_file light"
 order += "volume master"
 order += "disk /"
+order += "cpu_usage"
 order += "load"
 order += "cpu_temperature 0"
 order += "memory"
 order += "tztime local"
 
 general {
-        color_good = "#a6da95"
+	color_good = "#a6da95"
         color_bad  = "#ed8796"
+	color_degraded = "#afb4db" 
 
        colors = true
         interval = 1
+}
+
+cpu_usage {
+	format = "處理器%usage"
+}
+
+read_file light {
+	#format = "%title: %content"
+	format = "亮度:%content"
+	path = "/sys/class/backlight/intel_backlight/brightness"
+	Max_characters = 100
 }
 
 wireless _first_ {
