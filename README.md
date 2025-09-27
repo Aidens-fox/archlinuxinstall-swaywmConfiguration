@@ -5,3 +5,6 @@
 2 i3status #状态栏
 3 dunst #通知
 4 nwg-bar #开关机操作
+配置完成后的效果：
+
+<img width="1920" height="1080" alt="20250927_22h27m19s_grim" src="https://github.com/user-attachments/assets/6917cb8a-7e56-4b10-8cdb-c9675ef7a4ce" />
