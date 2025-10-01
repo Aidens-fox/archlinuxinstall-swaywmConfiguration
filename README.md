@@ -7,4 +7,5 @@
 4 nwg-bar #开关机操作
 配置完成后的效果：
 
-<img width="1920" height="1080" alt="20250927_22h27m19s_grim" src="https://github.com/user-attachments/assets/6917cb8a-7e56-4b10-8cdb-c9675ef7a4ce" />
+<img width="1920" height="1080" alt="20251001_22h07m14s_grim" src="https://github.com/user-attachments/assets/6cca15b0-a76b-4922-ab07-b09dcab6e48a" />
+
