@@ -11,7 +11,7 @@
 	set $mode_s 自由狼(E)|火狐(F)|退出(Esc)
 	set $mode_system 注消(O)|休眠(L)|重启(R)|关机(S)|退出(Esc)
 #壁纸设置
-output * bg /home/arch/archlinux.png fill
+output * bg /home/arch/壁纸/dpkk.png fill
 #触控板设置
 input type:touchpad {
        dwt enabled
@@ -136,8 +136,9 @@ bindsym $mod+c exec rofi -show drun  -show-icons -theme ~/.config/rofi/themes/ro
 exec_always --no-startup-id dunst
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
-exec  Xwayland
+exec  xwayland-satellite
 exec systemctl start i2prouter.service
+exec -no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec systemctl enable i2prouter.service
 #开关机设置
 mode "$mode_system" {
@@ -156,4 +157,4 @@ mode "$mode_s" {
     bindsym $mod+p mode "default"
 }
 bindsym $mod+z  exec nwg-bar
-
+bindsym $mod+p exec  grim
