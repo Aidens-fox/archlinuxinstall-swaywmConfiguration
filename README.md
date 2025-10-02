@@ -8,6 +8,8 @@
 配置完成后的效果：
 
 <img width="1920" height="1080" alt="20251001_22h07m14s_grim" src="https://github.com/user-attachments/assets/6cca15b0-a76b-4922-ab07-b09dcab6e48a" />
+
+````
 日常使用的软件
 终端：kitty
 输入法：fcitx5+维基百科词库
@@ -26,3 +28,4 @@ gtk显示模式&主题管理：nwg-look
 通知管理器：dunst
 截图：grim
 下载器: qbittorrent
+````
