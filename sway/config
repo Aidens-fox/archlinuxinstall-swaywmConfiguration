@@ -11,7 +11,7 @@
 	set $mode_s 自由狼(E)|火狐(F)|退出(Esc)
 	set $mode_system 注消(O)|休眠(L)|重启(R)|关机(S)|退出(Esc)
 #壁纸设置
-output * bg /home/arch/壁纸/dpkk.png fill
+output * bg /home/uxtk/壁纸/dpkk.png fill
 #触控板设置
 input type:touchpad {
        dwt enabled
@@ -129,17 +129,15 @@ include /etc/sway/config.d/*
 gaps inner 0px
 gaps outer 0px
 default_border pixel 0
-default_border pixel 1
+default_border pixel 2
 #应用启动器
-bindsym $mod+c exec rofi -show drun  -show-icons -theme ~/.config/rofi/themes/rounded-gray-dark.rasi
+bindsym $mod+c exec rofi -show drun  -show-icons -theme .config/rofi/themes/rounded-gray-dark.rasi
 #自启动
 exec_always --no-startup-id dunst
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec  xwayland-satellite
-exec systemctl start i2prouter.service
 exec -no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec systemctl enable i2prouter.service
 #开关机设置
 mode "$mode_system" {
  bindsym o exec --no-startup-id i3-msg exit
@@ -156,5 +154,4 @@ mode "$mode_s" {
     bindsym Escape mode "default"
     bindsym $mod+p mode "default"
 }
-bindsym $mod+z  exec nwg-bar
 bindsym $mod+p exec  grim
