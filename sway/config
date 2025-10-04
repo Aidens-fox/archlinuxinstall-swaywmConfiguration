@@ -6,9 +6,7 @@
 	set $right l
 	set $term kitty
 	set $menu wmenu-run
-	set $Locker i3lock && system
 	set $Locker i3lock && sleep 1
-	set $mode_s 自由狼(E)|火狐(F)|退出(Esc)
 	set $mode_system 注消(O)|休眠(L)|重启(R)|关机(S)|退出(Esc)
 #壁纸设置
 output * bg /home/uxtk/壁纸/dpkk.png fill
@@ -20,14 +18,7 @@ input type:touchpad {
        middle_emulation enabled
    }
 #浮动窗口设置
- # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
     floating_modifier $mod normal
-
-    # Reload the configuration file
 #基础按键绑定
 	bindsym $mod+Return exec $term
 	bindsym $mod+Shift+q kill
@@ -65,7 +56,7 @@ input type:touchpad {
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
-#________________________________________
+
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
     bindsym $mod+Shift+3 move container to workspace number 3
@@ -128,7 +119,6 @@ include /etc/sway/config.d/*
 #窗口间距
 gaps inner 0px
 gaps outer 0px
-default_border pixel 0
 default_border pixel 2
 #应用启动器
 bindsym $mod+c exec rofi -show drun  -show-icons -theme .config/rofi/themes/rounded-gray-dark.rasi
@@ -137,6 +127,7 @@ exec_always --no-startup-id dunst
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec  xwayland-satellite
+exec autotiling -w 1 2 3 4 5 6 7 8 9 0
 exec -no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #开关机设置
 mode "$mode_system" {
@@ -146,12 +137,3 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id systemctl poweroff
     bindsym Escape mode "default"
 }
-#浏览器操作表
-mode "$mode_s" {
-	bindsym e exec --no-startup-id librewolf; mode "default"
-    bindsym f exec --no-startup-id firefox; mode "default"
-    # back to normal: Enter or Escape or $mod+p
-    bindsym Escape mode "default"
-    bindsym $mod+p mode "default"
-}
-bindsym $mod+p exec  grim
