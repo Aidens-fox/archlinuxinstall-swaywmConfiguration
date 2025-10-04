@@ -21,5 +21,10 @@ gtk显示模式&主题管理：nwg-look
 视频下载器 ：yt-dlp
 通知管理器：dunst
 截图：grim
-下载器: qbittorrent
+下载器: qbittorrentkitty 
+......
+````
+一键安装必要软件
+`````
+sudo pacman -S kitty  mpv imv i3status rofi zsh dunst polkit-gnome zsh zsh-completions autotiling yazi 
 ````
