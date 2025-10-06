@@ -2,7 +2,7 @@
   这些配置可能有些设置不合理，在下载文件时请仔细考虑，并做出适当调整，本人初中生，非专业人士，所以如果配置有问题请修改或反映
 配置完成后的效果：
 
-<img width="1920" height="1080" alt="20251001_22h07m14s_grim" src="https://github.com/user-attachments/assets/6cca15b0-a76b-4922-ab07-b09dcab6e48a" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a0d5b257-5fb8-4b64-b833-60c7113795c2" />
 
 ````
 日常使用的软件
