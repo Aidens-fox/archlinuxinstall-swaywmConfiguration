@@ -3,6 +3,9 @@
 配置完成后的效果：
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a0d5b257-5fb8-4b64-b833-60c7113795c2" />
+或
+<img width="1920" height="1080" alt="20251025_17h56m11s_grim" src="https://github.com/user-attachments/assets/8da23b45-5e3d-4808-82b6-092e0b6d3194" />
+
 
 ````
 日常使用的软件
