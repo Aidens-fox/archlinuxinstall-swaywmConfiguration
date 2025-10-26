@@ -2,10 +2,7 @@
   这些配置可能有些设置不合理，在下载文件时请仔细考虑，并做出适当调整，本人初中生，非专业人士，所以如果配置有问题请修改或反映
 配置完成后的效果：
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a0d5b257-5fb8-4b64-b833-60c7113795c2" />
-或
-<img width="1920" height="1080" alt="20251025_17h56m11s_grim" src="https://github.com/user-attachments/assets/8da23b45-5e3d-4808-82b6-092e0b6d3194" />
-
+<img width="1920" height="1080" alt="20251026_22h38m27s_grim" src="https://github.com/user-attachments/assets/4ed9b6bd-4613-4173-9dcc-27ec00ca4f70" />
 
 ````
 日常使用的软件
@@ -15,7 +12,7 @@
 gtk显示模式&主题管理：nwg-look
 视频播放器：mpv
 图片查看器：imv
-状态栏： i3status
+状态栏： waybar
 办公套件：libreoffice
 文件管理器：yazi
 命令解释器：zsh
@@ -26,8 +23,4 @@ gtk显示模式&主题管理：nwg-look
 截图：grim
 下载器: qbittorrent
 ......
-````
-一键安装必要软件
-````
-sudo pacman -S kitty  mpv imv i3status rofi zsh dunst polkit-gnome zsh zsh-completions autotiling yazi 
 ````
