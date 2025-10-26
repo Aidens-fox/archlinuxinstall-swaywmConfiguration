@@ -1,3 +1,5 @@
+output <name> allow_tearing yes
+output * max_render_time off
 #变量
 	set $mod Mod4
 	set $left h
@@ -7,9 +9,9 @@
 	set $term kitty
 	set $menu wmenu-run
 	set $Locker i3lock && sleep 1
-	set $mode_system 注消(O)|休眠(L)|重启(R)|关机(S)|退出(Esc)
+	set $mode_system System (l) 鎖定, (e) 註銷, (s) 掛起, (h) 休眠, (r) 重啟, (Shift+s) 關機
 #壁纸设置
-output * bg /home/uxtk/壁纸/dpkk.png fill
+output * bg /home/uxtk/壁纸/53.jpg fill
 #触控板设置
 input type:touchpad {
        dwt enabled
@@ -78,6 +80,9 @@ input type:touchpad {
     bindsym $mod+Shift+space floating toggle
     bindsym $mod+space focus mode_toggle
     bindsym $mod+a focus parent
+    bindsym $mod+p exec  grim
+    bindsym $mod+Shift+R exec ~/bin/record_toggle.sh
+    bindsym $mod+Shift+F exec ~/bin/record_toggle.sh full
 mode "resize" {
 #调整容器大小
     bindsym $left resize shrink width 10px
@@ -102,24 +107,15 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 #状态栏
 bar {
-    position top
-        status_command i3status
-    colors {
-separator #666666
-background #222222
-statusline #dddddd
-focused_workspace #c1b9c9 #c1b9c9 #ffffff
-active_workspace #333333 #333333 #ffffff
-inactive_workspace #333333 #333333 #888888
-urgent_workspace #2f343a #900000 #ffffff    }
+swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
 
 #窗口间距
-gaps inner 0px
-gaps outer 0px
-default_border pixel 2
+gaps inner 2px
+gaps outer  2px
+default_border pixel 1
 #应用启动器
 bindsym $mod+c exec rofi -show drun  -show-icons -theme .config/rofi/themes/rounded-gray-dark.rasi
 #自启动
@@ -128,12 +124,21 @@ exec --no-startup-id fcitx5 -d
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 exec  xwayland-satellite
 exec autotiling -w 1 2 3 4 5 6 7 8 9 0
+exec wl-paste -t text --watch clipman store --no-persist
+exec nm-applet 
+exec blueman-applet
 exec -no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #开关机设置
 mode "$mode_system" {
- bindsym o exec --no-startup-id i3-msg exit
-    bindsym l exec --no-startup-id i3exit suspend, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot
-    bindsym s exec --no-startup-id systemctl poweroff
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
