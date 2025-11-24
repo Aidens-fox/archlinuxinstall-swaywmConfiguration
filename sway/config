@@ -11,7 +11,7 @@ output * max_render_time off
 	set $Locker i3lock && sleep 1
 	set $mode_system System (l) 鎖定, (e) 註銷, (s) 掛起, (h) 休眠, (r) 重啟, (Shift+s) 關機
 #壁纸设置
-output * bg /home/uxtk/壁纸/53.jpg fill
+output * bg /home/uxtk/壁纸/22.jpg fill
 #触控板设置
 input type:touchpad {
        dwt enabled
@@ -105,17 +105,20 @@ bindsym $mod+r mode "resize"
 #亮度调节
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
 #状态栏
-bar {
-swaybar_command waybar
+bar { 
+swaybar_command waybar  
 }
 
 include /etc/sway/config.d/*
 
 #窗口间距
-gaps inner 2px
-gaps outer  2px
-default_border pixel 1
+gaps inner 2
+gaps outer 2
+default_border pixel 2.5
+default_floating_border normal
+
 #应用启动器
 bindsym $mod+c exec rofi -show drun  -show-icons -theme .config/rofi/themes/rounded-gray-dark.rasi
 #自启动
@@ -128,6 +131,8 @@ exec wl-paste -t text --watch clipman store --no-persist
 exec nm-applet 
 exec blueman-applet
 exec -no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec waybar --config .config/waybar/swaywaybar/config.jsonc
+
 #开关机设置
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
